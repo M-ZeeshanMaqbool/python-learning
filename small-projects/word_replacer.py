@@ -1,12 +1,13 @@
 
-word = "donkey"
+words = ["donkey", "dog", "bitch", "monkey"]
 
 with open("newf.txt", "r", encoding="utf-8") as f:
     content = f.read()
 
-new_content = content.replace(word, "######")
+for word in words:
+    content = content.replace(word, "#" * len(word))
 
 with open("newf.txt", "w", encoding="utf-8") as f:
-    f.write(new_content)
+    f.write(content)
 
-print("Word replaced successfully!")
+print("All specified words have been replaced!")
